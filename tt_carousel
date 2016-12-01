@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carousel</title>
+        <style>
+            div {background-color:rgba(255,0,0,0);}
+
+            .carousel
+            {
+               width: 100%;
+            	height: 250px;
+            	overflow:hidden;
+            }
+
+            .carouselitems
+            {
+            	width:200%;
+            	height:100%;
+            	cursor:pointer;
+            	-webkit-animation-name: carousel; /* Chrome, Safari, Opera */
+                animation-name: carousel;
+                -webkit-animation-duration: 15s; /* Chrome, Safari, Opera */
+                animation-duration: 15s;	
+                -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+            }
+
+            /* Chrome, Safari, Opera */
+            @-webkit-keyframes carousel {
+                0%   {margin-left:0%;}
+                100%  {margin-left:-100%;}
+            }
+
+            @keyframes carousel {
+                0%   {margin-left:0%;}
+                100%  {margin-left:-100%;}
+            }
+
+            .carouselitems:hover
+            {
+                -webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
+                animation-play-state: paused;
+            }
+            .carouselitem
+            {
+            	width:10%;
+            	height:100%;
+            	float:left;
+            }
+
+            .carouselitem_image,.carouselitem_content
+            {
+                width:80%;
+                margin 0 auto 0 auto;
+            }
+
+            .carouselitem_image
+            {
+                height:70%;
+                border-radius:1em;
+                background-size:cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .carouselitem_content
+            {
+                text-align:center;
+            }
+        </style>
+
+        <script>
+            function duplicate()
+            {
+                var wrapper=document.getElementById("carouselitems");
+                var content=wrapper.innerHTML;
+                content=content+content;
+                wrapper.innerHTML=content;
+            }
+        </script>
+    </head>
+
+    <body onload="duplicate();">
+        <div class="carousel">
+            <div class="carouselitems" id="carouselitems">
+                <div class="carouselitem">
+                    <div class="carouselitem_image" style="background-image:url(http://1.bp.blogspot.com/-gmAFCVEj31o/VSl7xyIvNMI/AAAAAAAAAfk/MELp8Ctu5Aw/s1600/lbphoto1.jpg)">
+
+                    </div>
+                    <div class="carouselitem_content">
+                        <p>Fresh from the womb</p>
+                    </div>
+                </div>
+
+                <div class="carouselitem">
+                    <div class="carouselitem_image" style="background-image:url(http://1.bp.blogspot.com/-KV_OkNI2l3M/VSl7x4EyZ4I/AAAAAAAAAfo/DzrKkBYwPyY/s1600/lbphoto2.jpg)">
+
+                    </div>
+                    <div class="carouselitem_content">
+                        <p>Tiny pale Yoda</p>
+                    </div>
+                </div>
+
+                <div class="carouselitem">
+                    <div class="carouselitem_image" style="background-image:url(http://1.bp.blogspot.com/-JDexW8YAv9g/VSl7x2Dg3eI/AAAAAAAAAfg/Sv8H8lBRv84/s1600/lbphoto3.jpg)">
+
+                    </div>
+                    <div class="carouselitem_content">
+                        <p>Wants to chew on his Uncle's fingers</p>
+                    </div>
+                </div>
+
+                <div class="carouselitem">
+                    <div class="carouselitem_image" style="background-image:url(http://1.bp.blogspot.com/-m3DAkIeOanA/VSl7yveswSI/AAAAAAAAAfs/aBluA9439S0/s1600/lbphoto4.jpg)">
+
+                    </div>
+                    <div class="carouselitem_content">
+                        <p>More fingers</p>
+                    </div>
+                </div>
+
+                <div class="carouselitem">
+                    <div class="carouselitem_image" style="background-image:url(http://2.bp.blogspot.com/-YVR5SJZqzyM/VSl7y2wpkvI/AAAAAAAAAfw/l6urO8MW6cs/s1600/lbphoto5.jpg)">
+
+                    </div>
+                    <div class="carouselitem_content">
+                        <p>At age 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
